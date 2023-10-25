@@ -2,6 +2,8 @@ class GameController <ApplicationController
   def user_played_rock
     moves = ["rock", "paper", "scissors"]
 
+    @player_move = "rock"
+
     @computer_move = moves.sample
 
     if @computer_move == "rock"
@@ -11,6 +13,49 @@ class GameController <ApplicationController
       @outcome = "won"
 
     else @outcome = "lost"
+
+    end
+
+    render ({:template => "game_templates/play_rock"})
+
+  end
+
+
+  def user_played_paper
+    moves = ["rock", "paper", "scissors"]
+
+    @computer_move = moves.sample
+
+    @player_move = "paper"
+
+    if @computer_move == "rock"
+      @outcome = "won"
+
+    elsif @computer_move == "scissors"
+      @outcome = "lost"
+
+    else @outcome = "tied"
+
+    end
+
+    render ({:template => "game_templates/play_paper"})
+
+  end
+
+  def user_played_scissors
+    moves = ["rock", "paper", "scissors"]
+
+    @computer_move = moves.sample
+
+    @player_move = "scissors"
+
+    if @computer_move == "rock"
+      @outcome = "lost"
+
+    elsif @computer_move == "scissors"
+      @outcome = "tied"
+
+    else @outcome = "won"
 
     end
 
