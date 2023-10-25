@@ -16,7 +16,7 @@ class GameController <ApplicationController
 
     end
 
-    render ({:template => "game_templates/play_rock"})
+    render ({:template => "game_templates/play"})
 
   end
 
@@ -38,7 +38,7 @@ class GameController <ApplicationController
 
     end
 
-    render ({:template => "game_templates/play_paper"})
+    render ({:template => "game_templates/play"})
 
   end
 
@@ -59,7 +59,12 @@ class GameController <ApplicationController
 
     end
 
-    render ({:template => "game_templates/play_rock"})
+    render ({:template => "game_templates/play"})
+
+  end
+
+  def rules
+    render ({:template => "game_templates/rules"})
 
   end
 

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get("/scissors", {:controller => "game", :action => "user_played_scissors"})
 
+  get("/", {:controller => "game", :action => "rules"})
+
 end
